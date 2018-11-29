@@ -9,6 +9,6 @@ namespace RSDSCADA.Models
     class OrdersResponse
     {
 
-        public List<string> orders { get; set; } = new List<string>();
+        public List<Order> orders { get; set; } = new List<Order>();
     }
 }

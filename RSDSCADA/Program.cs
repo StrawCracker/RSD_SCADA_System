@@ -18,15 +18,16 @@ namespace RSDSCADA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
             //Start default stuff
             ViewModel = new Form1ViewModel();
+            PLCClient.Get().sendString("P"); //Init singleton
             SCADAForm = new Form1(ViewModel);
             var LifetimeThread=new ImAlive();
 
 
             //Run Main
-            Application.Run(SCADAForm);
+            //Application.Run(SCADAForm);
+            SCADAForm.ShowDialog();
             LifetimeThread.UptimeThread.Abort();
         }
 
